@@ -1,0 +1,31 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <h2>Create account</h2>
+    <p class="auth-subtitle">Start by setting up your login details</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label>
+        Email
+        <input type="email" formControlName="email" placeholder="you@example.com" />
+      </label>
+
+      <label>
+        Password
+        <input type="password" formControlName="password" placeholder="••••••••" />
+        @if (form.get('password')?.hasError('complexity') && form.get('password')?.touched) {
+          <span class="hint">Needs a letter, a number, and a special character (min 8 chars).</span>
+        }
+      </label>
+
+      @if (errorMessage()) {
+        <p class="error">{{ errorMessage() }}</p>
+      }
+
+      <button type="submit" [disabled]="form.invalid || loading()">
+        {{ loading() ? 'Creating account...' : 'Register' }}
+      </button>
+    </form>
+
+    <p class="auth-footer">Already have an account? <a routerLink="/login">Log in</a></p>
+  </div>
+</div>

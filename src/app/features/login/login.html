@@ -1,0 +1,28 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <h2>Welcome back</h2>
+    <p class="auth-subtitle">Log in to continue to your account</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label>
+        Email
+        <input type="email" formControlName="email" placeholder="you@example.com" />
+      </label>
+
+      <label>
+        Password
+        <input type="password" formControlName="password" placeholder="••••••••" />
+      </label>
+
+      @if (errorMessage()) {
+        <p class="error">{{ errorMessage() }}</p>
+      }
+
+      <button type="submit" [disabled]="form.invalid || loading()">
+        {{ loading() ? 'Logging in...' : 'Log in' }}
+      </button>
+    </form>
+
+    <p class="auth-footer">No account? <a routerLink="/register">Register</a></p>
+  </div>
+</div>

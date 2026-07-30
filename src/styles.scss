@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --color-bg: #eaf3ea;
+  --color-surface: #ffffff;
+  --color-primary: #1f4d36;
+  --color-primary-hover: #163a29;
+  --color-accent: #3f8f5f;
+  --color-text: #1c2622;
+  --color-text-muted: #5c6b63;
+  --color-border: #d7e6da;
+  --color-error: #d64545;
+  --color-error-bg: #fdecec;
+
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-card: 0 20px 40px -12px rgba(31, 77, 54, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
